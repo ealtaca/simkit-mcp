@@ -67,15 +67,22 @@ SimKit has about 90 tools. To keep your agent's context small, the bridge lists 
 
 Network capture needs either the SimKit SDK in your app or the direct-download build of SimKit.
 
-## How it works
+## How it works, and what it touches
 
-SimKit serves MCP on `127.0.0.1` only, protected by a token. The bridge reads that token from SimKit's settings on your Mac and forwards your agent's requests. Nothing leaves your machine.
+SimKit serves MCP on `127.0.0.1` only, protected by a token. This bridge is one dependency-free Node script (`server/simkit-mcp.mjs`). Everything it does:
+
+- **Reads one value from your Mac:** SimKit's agent token, from SimKit's own settings file (`~/Library/Containers/com.simkit.app/Data/Library/Preferences/com.simkit.app.plist`), using `/usr/bin/plutil`. It reads nothing else.
+- **Talks to one address:** `http://127.0.0.1:47290/mcp`, the SimKit app on the same Mac. It sends the token there and nowhere else, and makes no other network request.
+- **Writes nothing** to disk, and collects no analytics.
+
+What the tools return (requests, headers, bodies, screenshots) comes from the SimKit app and goes to your agent, which sends it to its model provider like anything else it reads. SimKit's own data handling is in its [privacy policy](https://simkit.dev/privacy-policy).
 
 | Variable | Use |
 |---|---|
 | `SIMKIT_MCP_TOKEN` | Use this token instead of reading SimKit's settings |
-| `SIMKIT_MCP_TOOLS` | `all` lists every SimKit tool up front. By default the bridge lists the everyday ones and the agent finds the rest with `find_tools` and runs them with `read_tool` or `call_tool` |
 | `SIMKIT_MCP_PORT` | SimKit's MCP port, if you changed it (default 47290) |
+| `SIMKIT_MCP_TOOLS` | `all` lists every SimKit tool up front. By default the bridge lists the everyday ones and the agent finds the rest with `find_tools` and runs them with `read_tool` or `call_tool` |
+| `SIMKIT_BUNDLE_ID` | Read the token from another SimKit build's settings |
 
 ## Troubleshooting
 
