@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "simkit": { "command": "npx", "args": ["-y", "simkit-mcp"] }
+  }
+}

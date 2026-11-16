@@ -1,0 +1,11 @@
+{
+  "name": "simkit",
+  "displayName": "SimKit",
+  "version": "0.1.0-beta.1",
+  "description": "See your iOS app's network traffic, mock responses and drive the simulator from your agent. Needs SimKit for Mac.",
+  "author": { "name": "SimKit", "url": "https://simkit.dev" },
+  "homepage": "https://simkit.dev",
+  "repository": "https://github.com/ealtaca/simkit-mcp",
+  "license": "MIT",
+  "keywords": ["ios", "simulator", "network", "mock", "xcode"]
+}

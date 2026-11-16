@@ -1,0 +1,15 @@
+{
+  "name": "simkit-mcp",
+  "version": "0.1.0-beta.1",
+  "description": "MCP bridge to SimKit: lets coding agents read an iOS app's network traffic, mock responses and drive the simulator.",
+  "mcpName": "dev.simkit/simkit",
+  "type": "module",
+  "bin": { "simkit-mcp": "bin/simkit-mcp.mjs" },
+  "files": ["bin", "README.md", "LICENSE"],
+  "os": ["darwin"],
+  "engines": { "node": ">=18" },
+  "keywords": ["mcp", "model-context-protocol", "ios", "simulator", "xcode", "network", "mock", "simkit"],
+  "homepage": "https://simkit.dev",
+  "repository": { "type": "git", "url": "git+https://github.com/ealtaca/simkit-mcp.git" },
+  "license": "MIT"
+}

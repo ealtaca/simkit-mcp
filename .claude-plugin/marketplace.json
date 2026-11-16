@@ -1,0 +1,15 @@
+{
+  "name": "simkit",
+  "description": "SimKit for coding agents: see an iOS app's network traffic and drive the simulator.",
+  "owner": {
+    "name": "SimKit",
+    "url": "https://simkit.dev"
+  },
+  "plugins": [
+    {
+      "name": "simkit",
+      "source": "./",
+      "description": "See your iOS app's network traffic, mock responses and drive the simulator from your agent. Needs SimKit for Mac."
+    }
+  ]
+}

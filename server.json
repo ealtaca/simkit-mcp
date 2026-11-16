@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.simkit/simkit",
+  "description": "See an iOS app's network traffic, mock responses and drive the simulator through SimKit for Mac.",
+  "repository": { "url": "https://github.com/ealtaca/simkit-mcp", "source": "github" },
+  "version": "0.1.0-beta.1",
+  "websiteUrl": "https://simkit.dev",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "simkit-mcp",
+      "version": "0.1.0-beta.1",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "SIMKIT_MCP_TOKEN",
+          "description": "SimKit's agent token. Leave unset: the bridge reads it from SimKit's own settings.",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
